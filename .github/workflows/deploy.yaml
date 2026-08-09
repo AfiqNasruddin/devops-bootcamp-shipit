@@ -3,8 +3,8 @@ on: [push, workflow_dispatch]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-        defaults:
-          run:
+      defaults:
+        run:
           working-directory: launchpad
         steps:
           - uses: actions/checkout@v7
@@ -12,6 +12,6 @@ jobs:
           - run: npm clean-install
           - run: npm run build
           - uses: actions/upload-pages-artifact@v5
-          with:
+        with:
             path: launchpad/dist
           - uses: actions/deploy-pages@v5
