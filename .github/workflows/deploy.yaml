@@ -3,7 +3,7 @@ name: deploy
 on: [push, workflow_dispatch]
 
 jobs:
-  say-hello:
+  test:
     runs-on: ubuntu-latest
 
     defaults:
@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
+        
       - run: npm clean-install
+
+      - run: npm run test
 
       - run: npm run build
 
