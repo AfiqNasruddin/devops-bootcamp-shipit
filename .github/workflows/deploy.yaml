@@ -29,7 +29,7 @@ jobs:
       - run: npm clean-install
       - run: npm run build
         env:
-          VITE_BOARD_URL: ${{ vars.BOARD_URL }}
+          VITE_BOARD_URL: ${{ github.actor }}
       - uses: actions/upload-pages-artifact@v5
         with:
           path: launchpad/dist
